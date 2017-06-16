@@ -1,0 +1,27 @@
+Common Source Tasks
+Initialization
+	Creating the empty repository for use.
+
+Clone
+	Making a local full copy on your workstation
+
+Checking Out
+	Locking a copy of one or more files for exclusive use
+
+Branching
+	Allowing a set files be developed concurrently and at different speeds for different reasons
+
+Merging
+	Taking different branches or sets of changes and integrating into one set or branch
+
+Resolving
+	Taking conflicting changes from multiple people on the same file and manually addressing
+
+Commit
+	Taking changes from the local system and commiting them to the branch
+
+Push/Pull
+	Taking changes locally or remotely and merging into one or more branches
+
+Covering:
+We will be covering Git from start to finish, including touching on same of the public Git hosting services. In addition, we will cover installing GitLab , a full web application like Github, that allows you to work with multiple complex
