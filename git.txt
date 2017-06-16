@@ -1,0 +1,148 @@
+Command:
+
+git
+git --version
+git config --global user.name "Andre L S Ferreira"
+git config --globla user.email "andre.ferreira@solutinet.com.br"
+git config --system core.editor "/bin/vim"
+git config --config --global push.default nothing
+git config --config --global merge.tool '/usr/bin/diff'
+git config --config --global color.ui true
+git config --config --global color.status auto
+git config --config --global color.branch auto
+
+cat /etc/gitconfig
+
+git config --system my.editing "/bin/false"
+cat /etc/gitconfig
+
+------------------------
+Lecture: Creating a Repository and Adding Content
+mkdir repo
+cd repo
+git init .
+
+echo "THIS IS A README FILE" > README.MD
+echo "/* THIS IS A VALID C SOURCE FILE */" > source.c
+
+git status
+
+git config user.name "user"
+git config user.email "user@example.com"
+
+git add .
+git status
+
+echo "Testing file" > test.txt
+git status
+git add test.txt
+
+git commit -m  "This is initial commit of files to our repo"
+git status
+
+vim README.MD
+This is a coment
+git status
+echo "new file" > test2.txt
+git status
+git commit -a
+git add .
+git commit -m "New Files"
+
+------------------------
+LOGGING:
+
+git status
+git log
+git log --oneline
+git log -p -2
+git log --pretty=oneline
+git log --pretty=format:"%h: %an, %ae, %cn, %cd, - %s"
+git log --pretty=format:"%h: %an, %ae, %cn, %cd, - %s" --graph
+git log -- test.txt
+git log --oneline -- text.txt
+git log --author="user"
+git log --grep="change"
+git log --graph
+man git log
+
+-------------------------
+CLONING:
+
+cd repo
+ll
+cd ..
+mkdir workingdir
+cd workingdir
+git clone /home/user/repo .
+ls -la
+vim test.txt
+make a change
+git status
+git commit -m "Cloning"
+git config user.name "dev1"
+git config user.email "dev1@example.com"
+git add .
+git commit -m "Commiting new changes"
+
+mkdir workingdir
+cd workingdir
+git clone user@172.16.0.254:repo .
+
+git add .
+git commit -m "Message to commit!"
+git push origin master
+
+----------------------------
+Ignoring Content:
+
+git config --global core.excludesfile
+git config --global core.excludesfile '/etc/gitignore'
+sudo vim /etc/gitingnore
+# Globally ignore compiled .out binary files
+*.out
+git status
+cp source.c source.out
+git status
+vim .gitignore
+*.bak
+tmp/*
+
+----------------------------
+TAGS:
+git tag tag1
+git tag
+tag1
+echo "tag1 post" > posttag.txt
+git status
+git add posttag.txt
+git commit
+git describe --tags
+git tag -a v1 -m "Version 1.0 Release"
+git tag
+
+
+----------------------------
+Branching:
+
+git branch -a
+git checkout -b development
+git checkout master
+git merge development --no-ff
+git status
+git branch
+git branch dev
+git branch
+git checkout dev
+
+
+----------------------
+ssh-keygen
+ssh-copy-id -i /root/.ssh/ip_rsa.pub 
+
+
+----------------------
+BITBucket:
+
+registrar: bitbaucket.org
+
